@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROOT PROTECTION</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; display: flex; justify-content: center;
+  align-items: center; background: #080d18; color: white;
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 90%; max-width: 400px; padding: 30px 22px;
+  background: #111c30; border: 1px solid #00d9ff; border-radius: 18px;
+  text-align: center; box-shadow: 0 0 25px #00d9ff33;
+}
+h1 { color: #00d9ff; letter-spacing: 2px; }
+p { color: #b8c7d9; }
+input {
+  width: 100%; padding: 14px; margin: 15px 0;
+  border: 1px solid #00d9ff; border-radius: 8px;
+  background: #080d18; color: white; font-size: 15px; outline: none;
+}
+button {
+  width: 100%; padding: 14px; border: none; border-radius: 8px;
+  background: #00d9ff; color: #080d18; font-weight: bold;
+  font-size: 16px; cursor: pointer;
+}
+#result { margin-top: 22px; line-height: 1.6; font-weight: bold; }
+.success { color: #00ff99; }
+.error { color: #ff4545; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🛡 ROOT PROTECTION</h1>
+  <p>Enter your secret verification code</p>
+  <input type="text" id="secretCode" placeholder="Enter your code" autocomplete="off">
+  <button onclick="verifyCode()">VERIFY CODE</button>
+  <div id="result" role="status" aria-live="polite"></div>
+</div>
+<script>
+function verifyCode() {
+  const code = document.getElementById("secretCode").value.trim();
+  const result = document.getElementById("result");
+
+  if (code === "GHIOS_ROOT_{567100?)") {
+    result.className = "success";
+    result.textContent =
+      "✅ VERIFICATION SUCCESSFUL! — Now all the steps are completed. You can proceed to learn how to root your mobile.";
+  } else {
+    result.className = "error";
+    result.textContent = "❌ WRONG CODE! Please enter the correct code.";
+  }
+}
+</script>
+</body>
+</html>
